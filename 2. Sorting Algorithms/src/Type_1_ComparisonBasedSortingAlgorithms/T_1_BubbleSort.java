@@ -49,17 +49,17 @@ public class T_1_BubbleSort {
     public static int[] bubbleSortEfficientWay(int[] integerArray, boolean ascending) {
         int counter = 0;
         for (int i = 0; i < integerArray.length - 1; i++) {
-            boolean isSwappedDone = true;
+            boolean isSwappedDone = false;
             ++counter;
             for (int j = 0; j < integerArray.length - 1 - i; j++) {
                 if (ascending && integerArray[j] > integerArray[j + 1]) {
                     swap(integerArray, j, j + 1);
-                    isSwappedDone = false;
+                    isSwappedDone = true;
                 }
 
                 if (ascending == false && integerArray[j] < integerArray[j + 1]) {
                     swap(integerArray, j, j + 1);
-                    isSwappedDone = false;
+                    isSwappedDone = true;
                 }
             }
 
@@ -109,12 +109,14 @@ public class T_1_BubbleSort {
 
     public static void main(String[] args) {
 
-        int[] arr = { 9, 8,7,6,5,4,3,2,1 };
-        bubbleSort(false, arr);
-        arr = new int[] { 9, 8,7,6,5,4,3,2,1 };
-        bubbleSortEfficientWay(arr, false);
-        arr = new int[] { 9, 8,7,6,5,4,3,2,1 };
-        bubbleSort(arr, false);
-
+        int[] arr = { 5,2,3,1 };
+        bubbleSort(true, arr);
+        printArray(arr);
+        arr = new int[] { 5,2,3,1 };
+        bubbleSortEfficientWay(arr, true);
+        printArray(arr);
+        arr = new int[] { 5,2,3,1 };
+        bubbleSort(arr, true);
+        printArray(arr);
     }
 }
