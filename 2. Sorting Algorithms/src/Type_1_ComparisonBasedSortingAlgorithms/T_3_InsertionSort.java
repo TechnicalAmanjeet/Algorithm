@@ -30,6 +30,14 @@ public class T_3_InsertionSort {
         return arr;
     }
 
+    private static int[] efficientInsertionSort(int[] arr, boolean ascending) {
+        int[] sortedArr = efficientInsertionSort(arr);
+        if (ascending) {
+            return sortedArr;
+        }
+        return reverseInEfficientWay(sortedArr);
+    }
+
     private static int[] insertionSort(int[] arr, boolean ascending) {
         int[] sortedArr = insertionSort(arr);
         if (ascending) {
@@ -68,7 +76,7 @@ public class T_3_InsertionSort {
         printArray(arr);
         efficientInsertionSort(arr);
         printArray(arr);
-        insertionSort(arr, false);
+        efficientInsertionSort(arr, false);
         printArray(arr);
 
     }
